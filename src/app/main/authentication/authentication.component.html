@@ -1,14 +1,14 @@
 <header class="logo-section">
-    <img src="/assets/logo.png" alt="logo.">
+    <img src="/assets/logo.svg" alt="logo.">
 </header>
 
 <main class="d-lg-flex">
 
     <section class="illustration flex-grow-1">
-        <img src="/assets/login-illustration.png">
+        <img width="480" src="/assets/shop.jpg">
     </section>
 
-    <section class="login">
+    <section class="login" [ngClass]="{'d-none': signUp}">
         <h1 class="title">Log in</h1>
         <form>
             <div class="form-group">
@@ -32,8 +32,27 @@
             </div>
             <button class="btn btn-primary login-btn">Log in</button>
         </form>
-        <a class="forgot-password" href="">Forgot your password?</a>
-        <p class="sign-up">Don't have an account? <a class="link" href="">Sign up</a></p>
+        <a class="forgot-password">Forgot your password?</a>
+        <p class="sign-up">Don't have an account? <a (click)="signUp = true" class="link">Sign up</a></p>
+    </section>
+
+    <section class="create-account" [ngClass]="{ 'd-none': !signUp }">
+        <h1 class="title">Sign up</h1>
+        <p class="sign-up" style="text-align: start; margin-top: -24px; margin-bottom: 24px; color: #777;">Create a new account using your email</p>
+        <form>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <svg class="form-group-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"
+                        fill="#A1B3B7" fill-opacity="0.75" />
+                </svg>
+                <input id="email" type="text" class="form-control" placeholder="Enter your email">
+            </div>
+            <button class="btn btn-primary login-btn">Next</button>
+        </form>
+        <p class="sign-up">Already have an account? <a (click)="signUp = false" class="link">Log in</a></p>
     </section>
 
 </main>
