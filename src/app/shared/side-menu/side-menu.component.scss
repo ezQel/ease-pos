@@ -14,19 +14,28 @@
     fill: #545454;
   }
 
+  .icon-filled {
+    display: none;
+  }
+
   &.active {
     color: #FFFFFF;
     border-radius: 6px;
-    background-color: #00809D;
+    background-color: lighten($color: #00809D, $amount: 65);
+    color: #00809D;
 
     svg {
-      fill: #FFFFFF;
+      fill: #00809D;
+    }
+
+    .icon-outline {
+      display: none;
+    }
+
+    .icon-filled {
+      display: inline;
     }
   }
-}
-
-aside {
-
 }
 
 .main-content {

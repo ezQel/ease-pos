@@ -22,7 +22,8 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
   exports: [
     SideMenuComponent,
     BottomMenuComponent,
-    TopBarComponent
+    TopBarComponent,
+    NgbDropdownModule
   ]
 })
 export class SharedModule { }

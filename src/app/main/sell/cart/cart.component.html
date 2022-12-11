@@ -1,0 +1,38 @@
+<div class="cart shadow-sm d-flex flex-column">
+
+    <h5 class="p-3 pb-0">Cart</h5>
+
+    <ul class="flex-grow-1 items px-3">
+        <li *ngFor="let cartItem of cart" class="cart-item py-3">
+            <div class="d-flex">
+                <div class="item-name flex-grow-1">{{ cartItem.name }}</div>
+                <div class="price">{{ cartItem.price * (cartItem.quantity || 1) | currency: 'KSh '}}</div>
+            </div>
+            <div class="d-flex mt-2 align-items-end">
+                <div class="flex-grow-1 item-quantity">
+                    <label for="quantity" class="form-label mr-2 text-muted">Quantity</label>
+                    <input min="1" value="1" id="quantity" class="control form-control" type="number">
+                </div>
+                <a (click)="remove(cartItem)" class="remove">Remove</a>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout p-3">
+        <div class="d-flex mb-4 sub-total ">
+            <div class="flex-grow-1">Subtotal*</div>
+            <div class="total-price">{{ 1200 | currency: 'KSh ' }}</div>
+        </div>
+        <div class="d-flex">
+            <button class="btn btn-clear mr-2">
+                <svg width="15" height="18" viewBox="0 0 17 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.64286 16.9259C1.64286 17.476 1.88367 18.0036 2.31233 18.3925C2.74098 18.7815 3.32236 19 3.92857 19H13.0714C13.6776 19 14.259 18.7815 14.6877 18.3925C15.1163 18.0036 15.3571 17.476 15.3571 16.9259V4.48148H1.64286V16.9259ZM4.45429 9.54222L6.06571 8.08L8.5 10.2785L10.9229 8.08L12.5343 9.54222L10.1114 11.7407L12.5343 13.9393L10.9229 15.4015L8.5 13.203L6.07714 15.4015L4.46571 13.9393L6.88857 11.7407L4.45429 9.54222ZM12.5 1.37037L11.3571 0.333332H5.64286L4.5 1.37037H0.5V3.44444H16.5V1.37037H12.5Z"
+                        fill="#FF0000" />
+                </svg>
+            </button>
+            <button class="btn btn-primary flex-grow-1">Check out</button>
+        </div>
+    </div>
+
+</div>
