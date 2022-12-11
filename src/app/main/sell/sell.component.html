@@ -1,0 +1,13 @@
+<ul class="products">
+    <li *ngFor="let product of products$ | async" class="card mb-2">
+        <div class="card-body d-flex">
+            <div class="flex-grow-1">
+                <div>{{ product.name }}</div>
+                <div>{{ product.price | currency: 'KSh '}}</div>
+            </div>
+            <div>
+                {{ product.stock }} in stock
+            </div>
+        </div>
+    </li>
+</ul>
