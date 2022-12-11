@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
     canActivate: [],
+    component: LayoutComponent,
     children: [
       {
-        path: 'statistics',
+        path: 'insights',
         loadChildren: () =>
-          import('./main/statistics/statistics.module').then(
-            (m) => m.StatisticsModule
+          import('./main/insights/insights.module').then(
+            (m) => m.InsightsModule
           ),
       },
       {
@@ -29,6 +31,18 @@ const routes: Routes = [
         path: 'company',
         loadChildren: () =>
           import('./main/company/company.module').then((m) => m.CompanyModule),
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('./main/settings/settings.module').then(
+            (m) => m.SettingsModule
+          ),
+      },
+      {
+        path: '',
+        redirectTo: 'insights',
+        pathMatch: 'full',
       },
     ],
   },

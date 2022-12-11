@@ -12,7 +12,8 @@
     animation: fade-in 2s ease-in-out forwards;
 }
 
-.login, .create-account {
+.login,
+.create-account {
     min-width: 394px;
     margin-right: 64px;
     animation: pop-in 600ms ease-in-out;
@@ -84,6 +85,7 @@
 }
 
 .sign-up {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     margin-top: 48px;
     text-align: center;
     font-weight: 400;
@@ -96,9 +98,16 @@
     }
 }
 
+.subtitle {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: start;
+    margin-top: -24px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #636363;
+}
 
-
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
 
     :host {
         padding: 16px;

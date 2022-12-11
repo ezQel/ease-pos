@@ -1,0 +1,25 @@
+.nav-link {
+    color: #545454;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  
+    svg {
+      fill: #545454;
+    }
+  
+    &.active {
+      color: #FFFFFF;
+      border-radius: 6px;
+      background-color: #00809D;
+  
+      svg {
+        fill: #FFFFFF;
+      }
+    }
+  }
+  
+  .main-content {
+    background-color: #f6f7f8;
+    padding: 0 12px;
+  }

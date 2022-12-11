@@ -1,9 +1,30 @@
-nav {
+.nav-link {
+  color: #545454;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 150ms ease-in-out;
 
-  a {
-    display: inline-block;
-    text-align: center;
+  svg {
+    fill: #545454;
   }
+
+  &.active {
+    color: #FFFFFF;
+    border-radius: 6px;
+    background-color: #00809D;
+
+    svg {
+      fill: #FFFFFF;
+    }
+  }
+}
+
+aside {
+
+}
+
+.main-content {
+  background-color: #f6f7f8;
+  padding: 0 12px;
 }
