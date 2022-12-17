@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { Product } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-sell',
@@ -7,26 +8,84 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./sell.component.scss'],
 })
 export class SellComponent implements OnInit {
-  sortBy: string = 'sold';
+  sortBy: 'BEST_SELLING' | 'PRICE' | 'STOCK_SIZE' = 'BEST_SELLING';
   sortingOrder: 'ASC' | 'DESC' = 'ASC';
-  view: 'LIST' | 'GRID' = 'LIST'
-  products$?: Observable<any[]>;
-  products = [
-    { name: 'Oxford dictionary', price: 500, stock: 2, sold: 10 },
-    { name: 'Oxford Math Set', price: 400, stock: 32 },
-    { name: 'Ruler', price: 25, stock: 21 },
-    { name: 'HB Pencil', price: 30, stock: 45 },
-    { name: 'HB Pencil', price: 30, stock: 45 },
-    { name: 'HB Pencil', price: 30, stock: 45 },
-    { name: 'HB Pencil', price: 30, stock: 45 },
-    { name: 'Haco biro pen', price: 20, stock: 0, restockLevel: 10 },
-    { name: 'Bic gel pen', price: 50, stock: 10, restockLevel: 10 },
-  ];
+  view: 'LIST' | 'GRID' = 'LIST';
 
-  constructor() {}
+  products$?: Observable<Array<Product>>;
 
-  ngOnInit(): void {
-    this.products$ = of(this.products);
+  constructor() {
+    this.products$ = of(products);
   }
-  
+
+  ngOnInit(): void {}
 }
+
+const products: Product[] = [
+  {
+    name: 'Haco biro pen',
+    price: 20,
+    stockSize: 2,
+    reorderLevel: 10,
+    creationDate: '',
+    description: '',
+    id: '1',
+    modifiedDate: '',
+    taxRate: 0.1,
+  },
+  {
+    name: 'Bic gel pen',
+    price: 20,
+    stockSize: 20,
+    reorderLevel: 10,
+    creationDate: '',
+    description: '',
+    id: '2',
+    modifiedDate: '',
+    taxRate: 0.1,
+  },
+  {
+    name: 'Oxford dictionary',
+    price: 20,
+    stockSize: 20,
+    reorderLevel: 10,
+    creationDate: '',
+    description: '',
+    id: '3',
+    modifiedDate: '',
+    taxRate: 0.1,
+  },
+  {
+    name: 'Oxford Math Set',
+    price: 20,
+    stockSize: 5,
+    reorderLevel: 10,
+    creationDate: '',
+    description: '',
+    id: '4',
+    modifiedDate: '',
+    taxRate: 0.1,
+  },
+  {
+    name: 'HB Pencil',
+    price: 30,
+    stockSize: 45,
+    reorderLevel: 10,
+    creationDate: '',
+    description: '',
+    id: '5',
+    modifiedDate: '',
+    taxRate: 0.1,
+  },
+  {
+    name: 'Ruler',
+    price: 20,
+    stockSize: 0,
+    reorderLevel: 10,
+    creationDate: '',
+    description: '',
+    id: '6',
+    modifiedDate: '',
+    taxRate: 0.1,
+  },
+];

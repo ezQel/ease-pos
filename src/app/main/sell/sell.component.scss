@@ -35,6 +35,15 @@
     list-style: none;
 }
 
+.product {
+    cursor: pointer;
+    user-select: none;
+
+    &:not(.out-of-stock):hover {
+        background-color: #f4f5f6;
+    }
+}
+
 .product-name {
     color: #636363;
 }
@@ -51,6 +60,7 @@
 
 .out-of-stock {
     background-color: lighten($color: red, $amount: 47);
+    cursor: not-allowed;
 
     .product-stock {
         color: red;

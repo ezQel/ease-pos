@@ -40,6 +40,7 @@
     color: #00809D;
     font-size: 14px;
     text-align: end;
+    cursor: pointer;
 }
 
 .btn {
@@ -63,4 +64,9 @@
 
 .btn-clear {
     background-color: lighten($color: red, $amount: 42);
+}
+
+.no-items {
+    margin-top: 96px;
+    font-size: 14px;
 }

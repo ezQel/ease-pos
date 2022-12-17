@@ -23,6 +23,7 @@
                     </a>
                     <div ngbDropdownMenu class="shadow">
                         <small class="text-secondary px-2">Sort by</small>
+                        <a ngbDropdownItem>Best Selling</a>
                         <a ngbDropdownItem>Price</a>
                         <a ngbDropdownItem>Stock size</a>
                     </div>
@@ -76,16 +77,16 @@
         <div class="container">
 
             <ul class="products row">
-                <li *ngFor="let product of products$ | async" class="card mb-2"
-                    [ngClass]="{ 'out-of-stock': product.stock === 0, 'low-stock': product.restockLevel >= product.stock && product.stock > 0, 'col-6': view === 'GRID', 'col-12': view === 'LIST' }">
+                <li *ngFor="let product of products$ | async" class="card mb-2 product" (click)="cart.add(product)"
+                    [ngClass]="{ 'out-of-stock': product.stockSize === 0, 'low-stock': product.reorderLevel >= product.stockSize && product.stockSize > 0, 'col-6': view === 'GRID', 'col-12': view === 'LIST' }">
                     <div class="card-body d-flex">
                         <div class="flex-grow-1">
                             <div class="product-name">{{ product.name }}</div>
                             <div class="product-price">{{ product.price | currency: 'KSh '}}</div>
                         </div>
                         <div class="product-stock">
-                            <ng-container *ngIf="product.stock > 0; else outOfStock">
-                                {{ product.stock }} in stock
+                            <ng-container *ngIf="product.stockSize > 0; else outOfStock">
+                                {{ product.stockSize }} in stock
                             </ng-container>
                             <ng-template #outOfStock>
                                 Out of stock
@@ -98,6 +99,6 @@
         </div>
     </section>
 
-    <app-cart></app-cart>
+    <app-cart #cart></app-cart>
 
 </section>
