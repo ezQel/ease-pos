@@ -77,7 +77,7 @@
         <div class="container">
 
             <ul class="products row">
-                <li *ngFor="let product of products$ | async" class="card mb-2 product" (click)="cart.add(product)"
+                <li *ngFor="let product of products" class="card mb-2 product" (click)="cart.add(product)"
                     [ngClass]="{ 'out-of-stock': product.stockSize === 0, 'low-stock': product.reorderLevel >= product.stockSize && product.stockSize > 0, 'col-6': view === 'GRID', 'col-12': view === 'LIST' }">
                     <div class="card-body d-flex">
                         <div class="flex-grow-1">

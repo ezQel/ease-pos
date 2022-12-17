@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { FormControl } from '@angular/forms';
 import { Product } from 'src/app/interfaces/product';
 
 @Component({
@@ -12,10 +12,11 @@ export class SellComponent implements OnInit {
   sortingOrder: 'ASC' | 'DESC' = 'ASC';
   view: 'LIST' | 'GRID' = 'LIST';
 
-  products$?: Observable<Array<Product>>;
+  search = new FormControl();
+  products: Array<Product>;
 
   constructor() {
-    this.products$ = of(products);
+    this.products = products;
   }
 
   ngOnInit(): void {}
@@ -24,7 +25,7 @@ export class SellComponent implements OnInit {
 const products: Product[] = [
   {
     name: 'Haco biro pen',
-    price: 20,
+    price: 15,
     stockSize: 2,
     reorderLevel: 10,
     creationDate: '',
@@ -35,7 +36,7 @@ const products: Product[] = [
   },
   {
     name: 'Bic gel pen',
-    price: 20,
+    price: 35,
     stockSize: 20,
     reorderLevel: 10,
     creationDate: '',
@@ -46,7 +47,7 @@ const products: Product[] = [
   },
   {
     name: 'Oxford dictionary',
-    price: 20,
+    price: 300,
     stockSize: 20,
     reorderLevel: 10,
     creationDate: '',

@@ -59,7 +59,7 @@
 }
 
 .out-of-stock {
-    background-color: lighten($color: red, $amount: 47);
+    background-color: lighten($color: red, $amount: 48);
     cursor: not-allowed;
 
     .product-stock {
@@ -68,7 +68,7 @@
 }
 
 .low-stock {
-    background-color: lighten($color: orange, $amount: 47);
+    background-color: lighten($color: orange, $amount: 48);
 
     .product-stock {
         color: orange;

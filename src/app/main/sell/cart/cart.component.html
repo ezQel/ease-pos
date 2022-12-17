@@ -12,7 +12,7 @@
                 <div class="d-flex mt-2 align-items-end">
                     <div class="flex-grow-1 item-quantity">
                         <label for="quantity" class="form-label mr-2 text-muted">Quantity</label>
-                        <input (change)="add(cartItem.product, $event)" min="1" [max]="cartItem.product.stockSize"
+                        <input (change)="setQuantity(cartItem, $event)" min="1" [max]="cartItem.product.stockSize"
                             [value]="cartItem.quantity" id="quantity" class="control form-control" type="number">
                     </div>
                     <a (click)="remove(cartItem.product.id)" class="remove">Remove</a>
