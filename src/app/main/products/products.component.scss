@@ -1,0 +1,100 @@
+.search {
+    position: relative;
+
+    .icon {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+    }
+
+    .form-control {
+        padding-left: 32px;
+        font-size: 14px;
+    }
+}
+
+.view {
+    .icon {
+        fill: #636363;
+    }
+
+    &.active {
+        background-color: #00809d15;
+
+        .icon {
+            fill: #00809d;
+        }
+    }
+
+    &:hover .icon {
+        fill: #00809d;
+    }
+}
+
+.products {
+    list-style: none;
+}
+
+.product {
+    user-select: none;
+}
+
+.product-name {
+    color: #636363;
+}
+
+.product-price {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.product-stock {
+    font-size: 14px;
+    color: #009D52;
+}
+
+.out-of-stock {
+    background-color: lighten($color: red, $amount: 48);
+
+    .product-stock {
+        color: red;
+    }
+}
+
+.low-stock {
+    background-color: lighten($color: orange, $amount: 48);
+
+    .product-stock {
+        color: orange;
+    }
+}
+
+.fa-edit {
+    color: #00809d;
+}
+
+.fa-trash {
+    color: rgb(176, 74, 74);
+}
+
+.dropdown-toggle {
+    color: #636363;
+
+    &::after {
+        display: none;
+    }
+}
+
+.selected {
+    position: relative;
+    color: #00809d;
+    background-color: rgba(0, 128, 157, .07);
+
+    &::after {
+        content: url('/assets/icons/check.svg');
+        position: absolute;
+        margin-left: 16px;
+        right: 16px;
+        top: 6px;
+    }
+}
