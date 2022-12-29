@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-sm btn-primary">Add product</button>
+        <button (click)="addProduct()" class="btn btn-sm btn-primary">Add product</button>
     </div>
 
     <div class="container">
@@ -88,3 +88,7 @@
 
     </div>
 </section>
+
+<ng-template #addProductModal let-modal>
+    <app-add-product [modalRef]="modal"></app-add-product>
+</ng-template>

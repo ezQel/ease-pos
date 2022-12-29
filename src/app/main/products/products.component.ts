@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-products',
@@ -7,17 +8,24 @@ import { Product } from 'src/app/interfaces/product';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
+  @ViewChild('addProductModal')
+  addProductModal?: TemplateRef<any>;
+
   sortBy: 'BEST_SELLING' | 'PRICE' | 'STOCK_SIZE' = 'BEST_SELLING';
   sortingOrder: 'ASC' | 'DESC' = 'ASC';
   view: 'LIST' | 'GRID' = 'LIST';
 
   products: Array<Product>;
 
-  constructor() {
+  constructor(private ngbModal: NgbModal) {
     this.products = products;
   }
 
   ngOnInit(): void {}
+
+  addProduct(): void {
+    this.ngbModal.open(this.addProductModal);
+  }
 }
 
 const products: Product[] = [

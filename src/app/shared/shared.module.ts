@@ -5,7 +5,7 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     SideMenuComponent,
     BottomMenuComponent,
     TopBarComponent,
-    NgbDropdownModule
+    NgbDropdownModule,
+    NgbModalModule
   ]
 })
 export class SharedModule { }
