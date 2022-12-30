@@ -13,4 +13,8 @@ export class AddProductComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  saveProduct(): void {
+    this.modalRef.dismiss();
+  }
 }

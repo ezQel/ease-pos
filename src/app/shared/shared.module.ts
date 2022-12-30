@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     BottomMenuComponent,
     TopBarComponent,
     NgbDropdownModule,
-    NgbModalModule
+    NgbModalModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
